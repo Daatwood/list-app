@@ -56,7 +56,7 @@ class ListsContainer extends Component {
     editingList(id) {
       this.setState({
         editingListId: id
-      })
+      }, () => {this.title.focus()})
     }
 
     editList(id, title, excerpt) {
@@ -81,13 +81,16 @@ class ListsContainer extends Component {
 
     render() {
         return (
-          <div className="lists-container">
+          <div>
+            <NewListForm onNewList={this.addNewList} />
+            <div className="lists-container">
             {this.state.lists.map( list => {
               if (this.state.editingListId === list.id){
                 return (<EditListForm 
                   list={list}
                   key={list.id}
                   editList={this.editList}
+                  titleRef={input => this.title = input}
                 />)
               } else {
                 return (<List 
@@ -98,7 +101,7 @@ class ListsContainer extends Component {
                 />)
               }
             })}
-            <NewListForm onNewList={this.addNewList} />
+            </div>
           </div>
         )
     }

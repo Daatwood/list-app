@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #222;
   height: 150px;
@@ -15,14 +10,51 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.input {
+  border: 0;
+  background: none;
+  outline: none;
+  margin-top:10px;
+  width: 140px;
+  font-size: 11px;
+}
+
+.single-list {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  background: lightgray;
+  float: left;
+  font-size: 11px;
+  text-align: left;
+} 
+
+.input:focus {
+  border: solid 1px lightgrey;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+  font-size: 11px;
+}
+
+.deleteButton {
+  visibility: hidden;
+  float: right;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  color: red;
+}
+
+.single-list:hover .deleteButton {
+  visibility: visible;
 }

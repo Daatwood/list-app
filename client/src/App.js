@@ -7,7 +7,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Hello Hiplyst!</h1>
+          <h1 className="App-title">Just Lists</h1>
+          <p>Rails + React</p>
         </header>
         <ListsContainer />
       </div>

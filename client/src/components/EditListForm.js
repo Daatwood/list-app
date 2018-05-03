@@ -20,19 +20,24 @@ class EditListForm extends Component {
   }
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <input  name="title" 
-                type="text"
-                placeholder="Title..."
-                value={this.state.title}
-                onChange={this.handleChange} />
-        <input  name="excerpt" 
-                type="text"
-                placeholder="Excerpt..."
-                value={this.state.excerpt}
-                onChange={this.handleChange} />
-        <button>Update list</button>
-      </form>
+      <div className="single-list" key={this.state.id} >
+        <form onSubmit={this.handleSubmit} onBlur={this.handleSubmit}>
+          <input  className="input"
+                  name="title" 
+                  type="text"
+                  placeholder="Title..."
+                  value={this.state.title}
+                  ref={this.props.titleRef}
+                  onChange={this.handleChange} />
+          <textarea  className="input"
+                  name="excerpt" 
+                  type="textarea"
+                  placeholder="Description..."
+                  value={this.state.excerpt}
+                  onChange={this.handleChange}/>
+          <button>Update list</button>
+        </form>
+      </div>      
     )
   }
 }
